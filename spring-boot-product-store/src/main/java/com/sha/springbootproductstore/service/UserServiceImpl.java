@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Transactional // Transaction is required in spring for updating and deleteing
+    @Transactional // Transaction is required in spring for updating and deleting
     public void changeRole(Role newRole, String username) {
         userRepository.updateUserRole(username, newRole);
     }

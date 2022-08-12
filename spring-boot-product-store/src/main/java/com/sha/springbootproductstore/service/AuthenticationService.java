@@ -3,5 +3,5 @@ package com.sha.springbootproductstore.service;
 import com.sha.springbootproductstore.model.User;
 
 public interface AuthenticationService {
-    User SignInAndReturnJWT(User signInRequest);
+    User signInAndReturnJWT(User signInRequest);
 }
