@@ -21,8 +21,10 @@ import java.util.Date;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+
 @Component
-public class JwtProviderImpl implements JwtProvider {
+public class JwtProviderImpl implements JwtProvider
+{
     @Value("${app.jwt.secret}")
     private String JWT_SECRET;
 
@@ -30,7 +32,8 @@ public class JwtProviderImpl implements JwtProvider {
     private Long JWT_EXPIRATION_IN_MS;
 
     @Override
-    public String generateToken(UserPrinciple auth) {
+    public String generateToken(UserPrinciple auth)
+    {
         String authorities = auth.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
@@ -47,7 +50,8 @@ public class JwtProviderImpl implements JwtProvider {
     }
 
     @Override
-    public Authentication getAuthentication(HttpServletRequest request) {
+    public Authentication getAuthentication(HttpServletRequest request)
+    {
         Claims claims = extractClaims(request);
 
         if (claims == null)
@@ -76,7 +80,8 @@ public class JwtProviderImpl implements JwtProvider {
     }
 
     @Override
-    public boolean isTokenValid(HttpServletRequest request) {
+    public boolean isTokenValid(HttpServletRequest request)
+    {
         Claims claims = extractClaims(request);
 
         if (claims == null)
@@ -91,7 +96,8 @@ public class JwtProviderImpl implements JwtProvider {
         return true;
     }
 
-    private Claims extractClaims(HttpServletRequest request) {
+    private Claims extractClaims(HttpServletRequest request)
+    {
         String token = SecurityUtils.extractAuthTokenFromRequest(request);
 
         if (token == null)
