@@ -1,5 +1,5 @@
-const profilePage = () => {
+const ProfilePage = () => {
     return (<p>Profile-Page</p>);
 }
 
-export {profilePage};
+export {ProfilePage};
