@@ -6,7 +6,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a href="https://reactjs.org" className="navbar-brand ms-1">
                 <img src={logo} className="App-logo" alt="logo" />
-                React
+                Online Store
             </a>
 
             <div className="navbar-nav me-auto">
